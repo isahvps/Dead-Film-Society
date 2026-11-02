@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171613">
+  <meta name="description" content="THE FILM ARCHIVE — sua cinemateca digital pessoal.">
+  <title>THE FILM ARCHIVE — Personal Cinematheque</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="The Film Archive início"><span class="brand-mark">FA</span><span>THE FILM<br><b>ARCHIVE</b></span></a>
+    <div class="topbar-meta"><span class="live-dot"></span> PERSONAL CINEMATHEQUE <span class="meta-divider">/</span> VOL. 01</div>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
+  </header>
+  <aside class="sidebar" id="sidebar">
+    <div class="side-label">YOUR ARCHIVE</div>
+    <nav class="nav-list" aria-label="Navegação principal">
+      <button class="nav-item active" data-view="home"><span>⌂</span> Overview <small>01</small></button>
+      <button class="nav-item" data-view="directors"><span>◉</span> Directors <small>02</small></button>
+      <button class="nav-item" data-view="horror"><span>✳</span> Horror Archive <small>03</small></button>
+      <button class="nav-item" data-view="thriller"><span>◌</span> Suspense & Mystery <small>04</small></button>
+      <button class="nav-item" data-view="roulette"><span>◎</span> Film Roulette <small>05</small></button>
+      <button class="nav-item" data-view="scifi"><span>✧</span> Sci-Fi & Fantasy <small>06</small></button>
+      <button class="nav-item" data-view="watchlist"><span>＋</span> Watchlist <small>07</small></button>
+      <button class="nav-item" data-view="diary"><span>▤</span> Film Diary <small>08</small></button>
+    </nav>
+    <div class="sidebar-bottom"><div class="side-label">ARCHIVE STATUS</div><div class="storage-status"><span class="live-dot"></span><span>LOCAL COLLECTION</span></div><p>Your films are saved<br>on this device.</p></div>
+  </aside>
+  <main class="main-content" id="mainContent">
+    <section class="view active" id="view-home">
+      <div class="hero">
+        <div class="hero-copy"><div class="eyebrow">A PERSONAL FILM JOURNAL <span>✳</span> EST. 2026</div><h1>Every film leaves<br><em>a trace.</em></h1><p>A little place for the films you love, the ones you haven't seen, and everything in between.</p><button class="button button-light" data-go="watchlist">Explore your archive <span>↗</span></button></div>
+        <div class="hero-art"><div class="hero-stamp">A LIFE<br>IN<br>FRAMES</div><div class="hero-filmstrip"><div class="strip-hole"></div><div class="strip-frame"><span>FA</span></div><div class="strip-hole"></div><div class="strip-frame"><span>✳</span></div><div class="strip-hole"></div></div><div class="hero-caption">FIG. 001 — THE MAGIC OF MOVING IMAGES</div></div>
+      </div>
+      <div class="stats-row"><div class="stat"><span class="stat-label">FILMS WATCHED</span><strong id="statWatched">00</strong><span class="stat-note">in your diary</span></div><div class="stat"><span class="stat-label">ON YOUR WATCHLIST</span><strong id="statWatchlist">00</strong><span class="stat-note">waiting to be seen</span></div><div class="stat"><span class="stat-label">DIRECTORS EXPLORED</span><strong id="statDirectors">00</strong><span class="stat-note">from the archive</span></div><div class="stat stat-accent"><span class="stat-label">YOUR AVERAGE</span><strong id="statAverage">—</strong><span class="stat-note">personal rating</span></div></div>
+      <section class="content-section"><div class="section-heading"><div><div class="eyebrow">CURATED FOR YOU</div><h2>From the archive</h2></div><button class="text-button" data-go="watchlist">View watchlist ↗</button></div><div class="film-grid" id="featuredFilms"></div></section>
+      <section class="content-section bottom-grid"><div class="quote-card"><div class="eyebrow">A NOTE ON CINEMA</div><blockquote>“Cinema is a matter of what's in the frame and what's out.”</blockquote><span>— MARTIN SCORSESE</span></div><div class="roulette-teaser"><div class="eyebrow">CAN'T DECIDE?</div><h3>Let fate<br>pick your film.</h3><button class="button button-dark" data-go="roulette">Spin the reel <span>↗</span></button><div class="teaser-reel">◎</div></div></section>
+    </section>
+    <section class="view" id="view-directors"><div class="page-header"><div class="eyebrow">THE PEOPLE BEHIND THE FRAME</div><h1>Directors'<br><em>Archive.</em></h1><p>Explore the visionaries who shaped the way we see.</p></div><div class="filter-bar"><input id="directorSearch" class="search-input" placeholder="Search directors..." aria-label="Buscar diretores"><span class="result-count" id="directorCount"></span></div><div class="director-grid" id="directorGrid"></div></section>
+    <section class="view" id="view-horror"><div class="page-header page-header-dark"><div class="eyebrow">ENTER IF YOU DARE · GENRE STUDY Nº 01</div><h1>Horror<br><em>Archive.</em></h1><p>From quiet dread to the things that go bump in the night.</p></div><div class="genre-intro"><span>THE HORROR SPECTRUM</span><div class="chip-row" id="horrorChips"><button class="chip active" data-filter="all">All horrors</button><button class="chip" data-filter="Psychological">Psychological</button><button class="chip" data-filter="Supernatural">Supernatural</button><button class="chip" data-filter="Slasher">Slasher</button><button class="chip" data-filter="Gothic">Gothic</button></div></div><div class="film-grid" id="horrorFilms"></div></section>
+    <section class="view" id="view-thriller"><div class="page-header"><div class="eyebrow">NOTHING IS WHAT IT SEEMS · GENRE STUDY Nº 02</div><h1>Suspense &<br><em>Mystery.</em></h1><p>Unreliable narrators, impossible questions, and endings that stay with you.</p></div><div class="chip-row genre-chips" id="thrillerChips"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="Psychological">Psychological</button><button class="chip" data-filter="Mystery">Mystery</button><button class="chip" data-filter="Crime">Crime</button></div><div class="film-grid" id="thrillerFilms"></div></section>
+    <section class="view" id="view-roulette"><div class="page-header"><div class="eyebrow">THE CINEMATIC COIN TOSS</div><h1>Film<br><em>Roulette.</em></h1><p>For the nights when choosing a film is harder than watching one.</p></div><div class="roulette-layout"><div class="roulette-machine"><div class="roulette-ring" id="rouletteRing"><div class="roulette-inner"><span class="roulette-symbol">✳</span><span>THE REEL</span></div></div><div class="roulette-pointer">▼</div><div class="roulette-controls"><label for="rouletteSource">Choose your pool</label><select id="rouletteSource"><option value="all">Entire archive</option><option value="watchlist">My watchlist</option><option value="horror">Horror only</option><option value="thriller">Suspense only</option><option value="scifi">Sci-Fi & Fantasy</option></select><button class="button button-dark spin-button" id="spinButton">SPIN THE REEL <span>↻</span></button></div></div><div class="roulette-result" id="rouletteResult"><div class="result-placeholder"><span>✳</span><h3>Your next film<br>is waiting.</h3><p>Spin the reel and let the archive decide.</p></div></div></div></section>
+    <section class="view" id="view-scifi"><div class="page-header"><div class="eyebrow">BEYOND THE KNOWN · GENRE STUDY Nº 03</div><h1>Sci-Fi &<br><em>Fantasy.</em></h1><p>Other worlds, strange futures, and impossible realities.</p></div><div class="film-grid" id="scifiFilms"></div></section>
+    <section class="view" id="view-watchlist"><div class="page-header"><div class="eyebrow">THE FILMS STILL CALLING</div><h1>My <em>Watchlist.</em></h1><p>Your personal queue of films waiting for their moment.</p></div><div class="watchlist-tools"><div class="filter-bar"><input id="watchlistSearch" class="search-input" placeholder="Search your list..." aria-label="Buscar na lista"><select id="watchlistSort" class="select-input"><option value="added">Recently added</option><option value="title">Title A–Z</option><option value="year">Year</option></select></div><form id="addFilmForm" class="add-film-form"><input id="customFilmTitle" required maxlength="100" placeholder="Add a film title..." aria-label="Título do filme"><input id="customFilmYear" type="number" min="1888" max="2100" placeholder="Year" aria-label="Ano"><button class="button button-dark" type="submit">+ Add film</button></form></div><div class="film-grid" id="watchlistFilms"></div><div class="empty-state hidden" id="watchlistEmpty"><span>✳</span><h3>Your watchlist is a blank page.</h3><p>Add a film or save one from the archive.</p></div></section>
+    <section class="view" id="view-diary"><div class="page-header"><div class="eyebrow">A RECORD OF WHAT YOU'VE SEEN</div><h1>Film <em>Diary.</em></h1><p>Every screening, every feeling, every rating — kept here.</p></div><div class="diary-summary" id="diarySummary"></div><div class="diary-list" id="diaryList"></div><div class="empty-state hidden" id="diaryEmpty"><span>▤</span><h3>No screenings recorded yet.</h3><p>Mark a film as watched to start your diary.</p></div></section>
+    <footer class="site-footer"><span>THE FILM ARCHIVE © 2026</span><span>MADE FOR THE LOVE OF CINEMA</span><button id="exportButton" class="text-button">Export archive ↓</button></footer>
+  </main>
+  <dialog id="filmModal" class="film-modal"><button class="modal-close" id="modalClose" aria-label="Fechar">×</button><div id="modalContent"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
